@@ -1,0 +1,15 @@
+operator = input("Enter operator (+, -, *, /): ")
+a = float(input("Enter number 1: "))
+b = float(input("Enter number 2: "))
+
+if operator == '+':
+	print(a + b)
+if operator == '-':
+	print(a - b)
+if operator == '*':
+	print(a * b)
+if operator == '/':
+	if b == 0:
+		print("we cant divide on ZERO. ty again")
+	else:
+		print(a / b)
