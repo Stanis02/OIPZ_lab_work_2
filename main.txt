@@ -1,15 +1,16 @@
+ops = {
+    '+': lambda a, b: a + b,
+    '-': lambda a, b: a - b,
+    '*': lambda a, b: a * b,
+    '/': lambda a, b: a / b if b != 0 else None
+}
+
 operator = input("Enter operator (+, -, *, /): ")
 a = float(input("Enter number 1: "))
 b = float(input("Enter number 2: "))
 
-if operator == '+':
-	print(a + b)
-if operator == '-':
-	print(a - b)
-if operator == '*':
-	print(a * b)
-if operator == '/':
-	if b == 0:
-		print("we cant divide on ZERO. ty again")
-	else:
-		print(a / b)
+if operator in ops:
+	result = ops[operator](a,b)
+	print(result) if result is not None else print("you cant divide on ZERO. try again")
+else:
+	print("invalid operator")
